@@ -49,6 +49,13 @@ function handleGuess(correctSpot, userGuess) {
     }
     // then grab the appropriate container element for the correct guess from the DOM
     // then add the face class to that element so that the face shows up
+    if (hidingPlaces['shed']) {
+        shedContainer.classList.add('face');
+    } else if (hidingPlaces['tree']) {
+        treeContainer.classList.add('face');
+    } else {
+        boulderContainer.classList.add('face');
+    }
     // then if the user guess is correct, increment the correct guesses
     totalEl.textContent = totalGuesses;
     winsEl.textContent = correctGuesses;
